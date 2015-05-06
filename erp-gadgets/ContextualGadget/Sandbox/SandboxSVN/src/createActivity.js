@@ -219,6 +219,8 @@ function createActivity()
 ﻿  ﻿  debug("Inside createActivity method Before send to siebel Activity data",data);
   // ﻿  alert("Before send to siebel data :"+data);
 ﻿  ﻿  var SOAPAction='rpc/http://siebel.com/asi/:ANSActiviytInsertOrUpdateASI';
+﻿  ﻿  activityData = data;
+﻿  ﻿  activitySOAPAction = SOAPAction;
 ﻿  ﻿  invokeSiebeWebservice(data,SOAPAction,'activityResponse');
 
 ﻿  ﻿  //alert('Do you want to track this activity to Siebel?');
@@ -310,15 +312,22 @@ try
 ﻿  }
 ﻿  else
 ﻿  {
-﻿  debug("Inside createActivityResult method Activity Failure");
-﻿  if(obj.text==null||obj.text=="")
+﻿   if(activitySaveCount!=5)
+﻿   {
+﻿      invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse');
+﻿      activitySaveCount=activitySaveCount+1;
+﻿   }
+﻿   else
+﻿   {
+﻿       debug("Inside createActivityResult method Activity Failure");
+﻿      if(obj.text==null||obj.text=="")
 ﻿  ﻿  {
-﻿  debug("Inside createActivityResult method Activity Failure with empty text");
-﻿  document.getElementById('content_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
+﻿        debug("Inside createActivityResult method Activity Failure with empty text");
+﻿         document.getElementById('content_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 ﻿  ﻿  }
-﻿  else
-﻿  ﻿  {
-var text=obj.text;
+     ﻿  else
+     ﻿  ﻿  {
+     var text=obj.text;
 ﻿  ﻿  
 ﻿  ﻿  if (window.DOMParser)
 ﻿  ﻿  {
@@ -344,6 +353,7 @@ var text=obj.text;
 
 ﻿  ﻿  document.getElementById('content_div').innerHTML = 'Activity created Failure : '+xmlDoc.getElementsByTagName("faultstring")[0].childNodes[0].nodeValue;
 ﻿  ﻿  }
+﻿   }
 ﻿  }
 }
 catch (e)
