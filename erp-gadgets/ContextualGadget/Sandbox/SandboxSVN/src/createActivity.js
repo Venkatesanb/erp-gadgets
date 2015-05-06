@@ -221,6 +221,7 @@ function createActivity()
 ﻿  ﻿  var SOAPAction='rpc/http://siebel.com/asi/:ANSActiviytInsertOrUpdateASI';
 ﻿  ﻿  activityData = data;
 ﻿  ﻿  activitySOAPAction = SOAPAction;
+﻿  ﻿  activitySaveCount=0;
 ﻿  ﻿  invokeSiebeWebservice(data,SOAPAction,'activityResponse');
 
 ﻿  ﻿  //alert('Do you want to track this activity to Siebel?');
@@ -309,6 +310,7 @@ try
 ﻿  ﻿  document.getElementById('content_div').innerHTML = 'Activity Saved.(Activity ID:'+xmlDoc.getElementsByTagName("Id")[0].childNodes[0].nodeValue+')';
 ﻿  ﻿  document.getElementById('activityLoading').style.display = 'inline';
 ﻿  ﻿  document.getElementById('activityLoading').style.visibility = 'visible';
+﻿  ﻿  activitySaveCount=5;
 ﻿  }
 ﻿  else
 ﻿  {
@@ -327,6 +329,7 @@ try
 ﻿  ﻿  }
      ﻿  else
      ﻿  ﻿  {
+     ﻿  ﻿   activitySaveCount =5;
      var text=obj.text;
 ﻿  ﻿  
 ﻿  ﻿  if (window.DOMParser)
@@ -360,9 +363,11 @@ catch (e)
 {
 debug("Inside createActivityResult method Exception",e);
 }
+if(activitySaveCount==5)
+{
 document.getElementById('activityLoading').innerHTML = '';
 document.getElementById('activityLoading').style.display = 'none';
 document.getElementById('activityLoading').style.visibility = 'invisible';
-
+}
 debug("Inside createActivityResult method End","");
 }
