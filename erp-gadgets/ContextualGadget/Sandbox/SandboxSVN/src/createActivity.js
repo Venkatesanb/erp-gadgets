@@ -312,7 +312,7 @@ try
 ﻿  }
 ﻿  else
 ﻿  {
-﻿   if(activitySaveCount!=5)
+﻿   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
 ﻿   {
 ﻿      invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse');
 ﻿      activitySaveCount=activitySaveCount+1;
