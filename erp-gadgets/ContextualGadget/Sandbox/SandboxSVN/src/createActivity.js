@@ -316,7 +316,7 @@ try
 ﻿  {
 ﻿   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
 ﻿   {
-﻿      invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse');
+﻿     setTimeout(invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse'), 7000);
 ﻿      activitySaveCount=activitySaveCount+1;
 ﻿   }
 ﻿   else
