@@ -316,7 +316,9 @@ try
 ﻿  {
 ﻿   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
 ﻿   {
-﻿     setTimeout(invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse'), 7000);
+﻿    activityData=activityData.replace('<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>','<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>')
+﻿     data = data + '<ans:Description><![CDATA['+document.getElementById('description').value+']]></ans:Description>';
+﻿     setTimeout(invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse'), 9000);
 ﻿      activitySaveCount=activitySaveCount+1;
 ﻿   }
 ﻿   else
