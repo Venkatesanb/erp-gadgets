@@ -316,10 +316,15 @@ try
 ﻿  {
 ﻿   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
 ﻿   {
+	 var beforeChangeDescription = '<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>';
+	 activitySaveCount = activitySaveCount+1;
+	 var AfterChangeDescription = '<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>';
+	 alert("beforeChangeDescription :"+beforeChangeDescription);
+     alert("AfterChangeDescription :"+AfterChangeDescription);
 ﻿    activityData=activityData.replace('<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>','<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>')
 ﻿     data = data + '<ans:Description><![CDATA['+document.getElementById('description').value+']]></ans:Description>';
 ﻿     setTimeout(invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse'), 9000);
-﻿      activitySaveCount=activitySaveCount+1;
+﻿      
 ﻿   }
 ﻿   else
 ﻿   {
