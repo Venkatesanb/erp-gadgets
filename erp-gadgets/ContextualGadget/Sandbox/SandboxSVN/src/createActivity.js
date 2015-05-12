@@ -316,6 +316,10 @@ try
 ﻿  {
 ﻿   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
 ﻿   {
+	 if (activitySaveCount==0)
+	 {
+		activitySaveCount=null;
+	 }
 	 var beforeChangeDescription = '<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>';
 	 activitySaveCount = activitySaveCount+1;
 	 var AfterChangeDescription = '<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>';
