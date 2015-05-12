@@ -328,7 +328,7 @@ try
 	 alert("BeforChangeDetails :"+beforeChangeDescription);
      alert("AfterChangeDetails :"+AfterChangeDescription);
 ﻿    activityData=activityData.replace(beforeChangeDescription,beforeChangeDescription)
-﻿     
+﻿      alert("After change activityData :"+activityData);
 ﻿     setTimeout(invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse'), 9000);
 ﻿      
 ﻿   }
