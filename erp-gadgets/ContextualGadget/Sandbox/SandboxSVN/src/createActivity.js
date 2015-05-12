@@ -327,7 +327,7 @@ try
 	 var AfterChangeDescription = '<ans:ANSActivityDetails><![CDATA['+document.getElementById('details').value+activitySaveCount+']]></ans:ANSActivityDetails>';
 	 alert("BeforChangeDetails :"+beforeChangeDescription);
      alert("AfterChangeDetails :"+AfterChangeDescription);
-﻿    activityData=activityData.replace(beforeChangeDescription,beforeChangeDescription)
+﻿    activityData=activityData.replace(beforeChangeDescription,AfterChangeDescription)
 ﻿      alert("After change activityData :"+activityData);
 ﻿     setTimeout(invokeSiebeWebservice(activityData,activitySOAPAction,'activityResponse'), 9000);
 ﻿      
