@@ -319,7 +319,7 @@ try
 ﻿   	alert("Before Check :"+activitySaveCount);
 	 if (activitySaveCount==0)
 	 {
-		activitySaveCount=null;
+		activitySaveCount='';
 	 }
 	 	alert("After Check :"+activitySaveCount);
 	 var beforeChangeDescription = '<ans:Description><![CDATA['+document.getElementById('description').value+activitySaveCount+']]></ans:Description>';
