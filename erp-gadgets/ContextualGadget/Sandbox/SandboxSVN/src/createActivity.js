@@ -325,7 +325,7 @@ try
 	 var beforeChangeDescription = '<ans:ANSActivityDetails><![CDATA['+document.getElementById('details').value+activitySaveCount+']]></ans:ANSActivityDetails>';
 	 activitySaveCount = activitySaveCount+1;
 	 var AfterChangeDescription = '<ans:ANSActivityDetails><![CDATA['+document.getElementById('details').value+activitySaveCount+']]></ans:ANSActivityDetails>';
-	 alert(BeforChangeDetails :"+beforeChangeDescription);
+	 alert("BeforChangeDetails :"+beforeChangeDescription);
      alert("AfterChangeDetails :"+AfterChangeDescription);
 ﻿    activityData=activityData.replace(beforeChangeDescription,beforeChangeDescription)
 ﻿     
