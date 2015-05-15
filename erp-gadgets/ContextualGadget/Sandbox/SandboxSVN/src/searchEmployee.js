@@ -85,6 +85,9 @@ try
 			debug("Inside searchEmployee method Before send Employee Data to siebel .",soapMsg);
 
 			var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
+			employeeData =soapMsg;
+			employeeSOAPAction =SOAPAction;
+			employeeSaveCount=0;
 			invokeSiebeWebservice(soapMsg,SOAPAction,'employeeResponse');
 		}
 		else
@@ -115,6 +118,7 @@ debug("Inside searchEmployeeResult method Employee Response authErrorText",searc
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
 if(searchEmployeeResultObj.rc=="200")
 {
+	employeeSaveCount=0;
 deleteAllRow("employeeAvailable");
 var table = document.getElementById("employeeAvailable");
 var text=searchEmployeeResultObjText;
@@ -246,9 +250,14 @@ else
 	{
 	gadgets.window.adjustHeight(300);
 	debug("Inside searchEmployeeResult method Employee Query Failure");
-	if(searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")
+	if((searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")&&employeeSaveCount!=3)
 		{
 	debug("Inside searchEmployeeResult method Employee Query Failure with empty text");
+	setTimeout(invokeSiebeWebservice(employeeData,employeeSOAPAction,'employeeResponse'), 30000);
+		employeeSaveCount=employeeSaveCount+1;
+		}
+	else
+	{
 	document.getElementById('Employee_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
 	else
