@@ -34,9 +34,9 @@ var SOAPparams = {};
 ﻿  ﻿  if(soapResponse=="employeeLogin")
 ﻿  ﻿  ﻿  gadgets.io.makeRequest(soapURL, employeeLogin, SOAPparams);
 ﻿  ﻿  if(soapResponse=="getemployeeResponse")
-﻿  ﻿  ﻿  gadgets.io.makeRequest(soapURL, getEmployeeResult, SOAPparams,10);
+﻿  ﻿  ﻿  makeCachedRequest(soapURL, getEmployeeResult, SOAPparams,10);
 ﻿  ﻿  if(soapResponse=="getcontactResponse")
-﻿  ﻿  ﻿  gadgets.io.makeRequest(soapURL, getContactResult, SOAPparams,10);
+﻿  ﻿  ﻿  makeCachedRequest(soapURL, getContactResult, SOAPparams,10);
 debug("Inside invokeSiebeWebservice method End","");
 }
 function debug(textName,textValue)
