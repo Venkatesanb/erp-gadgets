@@ -259,15 +259,20 @@ else
 		}
 	else if(searchEmployeeResultObj.text!=null||searchEmployeeResultObj.text!="")
 		{
+			employeeSaveCount=3;
 		document.getElementById('Employee_div').innerHTML = 'Employee Query Failure : '+searchEmployeeResultObj.text;
 		}
 	else
 	{
+		employeeSaveCount=3;
 	document.getElementById('Employee_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
 	
 	}
+if(employeeSaveCount==3)
+{
 document.getElementById('Employeeloading').innerHTML = '';
 document.getElementById('Employeeloading').style.display = 'none';
 document.getElementById('Employeeloading').style.visibility = 'invisible';
+}
 }
