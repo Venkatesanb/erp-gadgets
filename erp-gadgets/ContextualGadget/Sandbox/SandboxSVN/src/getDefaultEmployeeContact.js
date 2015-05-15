@@ -427,7 +427,7 @@ debug("Inside getContactResult method Exception",e);
 
 else
 {
-	if(contactData!=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
+	if(contactSaveCount !=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
   {
   	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse'), 30000);
   	contactSaveCount =contactSaveCount+1;
