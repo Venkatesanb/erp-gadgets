@@ -270,23 +270,28 @@ else
 	{
 	gadgets.window.adjustHeight(300);
 	debug("Inside searchContactResult method Contact Query Failure");
-	if(searchContactResultObj.text==null||searchContactResultObj.text=="")
+	/*if(searchContactResultObj.text==null||searchContactResultObj.text=="")
 		{
 	debug("Inside searchContactResult method Contact Query Failure with empty text");
 	document.getElementById('Contact_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
 	else
-		{
+		{*/
 		if(contactSaveCount!=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
 		  {
 		  	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'contactResponse'), 30000);
 		  	contactSaveCount =contactSaveCount+1;
 		  }
-		  else
+		  else if(searchContactResultObj.text!=null||searchContactResultObj.text!="")
 		  {	
 		document.getElementById('Contact_div').innerHTML = 'Contact Query Failure : '+searchContactResultObj.text;
 		}
+		else
+			{
+			debug("Inside searchContactResult method Contact Query Failure with empty text");
+			document.getElementById('Contact_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
+		//}
 	}
 document.getElementById('contactloading').innerHTML = '';
 document.getElementById('contactloading').style.display = 'none';
