@@ -66,7 +66,7 @@ debug("Inside getEmployeeResult method Employee Response authErrorText",searchEm
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
 if(searchEmployeeResultObj.rc=="200")
 {
-	employeeSaveCount=0;
+	employeeSaveCount=3;
 var table = document.getElementById("employeeSelected");
 var text=searchEmployeeResultObjText;
 if (window.DOMParser)
@@ -195,9 +195,9 @@ debug("Inside getEmployeeResult method Exception",e);
 }
 else
 {
-	if(employeeSaveCount!=5 && (searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")) 
+	if(employeeSaveCount!=3 && (searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")) 
 	{
-		setTimeout(invokeSiebeWebservice(employeeData,employeeSOAPAction,'getemployeeResponse'), 9000);
+		setTimeout(invokeSiebeWebservice(employeeData,employeeSOAPAction,'getemployeeResponse'), 30000);
 		employeeSaveCount=employeeSaveCount+1;
 	}
 	else
@@ -262,7 +262,7 @@ try
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
 				contactData =soapMsg;
 				contactSOAPAction=SOAPAction;
-				
+				contactSaveCount=0;
 				invokeSiebeWebservice(soapMsg,SOAPAction,'getcontactResponse');
 		}		
 	}
@@ -285,7 +285,7 @@ var searchContactResultObjText = searchContactResultObj.text;
 
 if(searchContactResultObj.rc=="200")
 {
-	contactSaveCount=5;
+	contactSaveCount=3;
 var table = document.getElementById("contactSelected");
 var text=searchContactResultObjText;
 	
@@ -427,9 +427,9 @@ debug("Inside getContactResult method Exception",e);
 
 else
 {
-	if(contactData!=5 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
+	if(contactData!=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
   {
-  	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse'), 9000);
+  	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse'), 30000);
   	contactSaveCount =contactSaveCount+1;
   }
   else
