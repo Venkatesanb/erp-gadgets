@@ -94,6 +94,9 @@ try
 				//alert("Before send to Siebel :"+ soapMsg);
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
+				contactData =soapMsg;
+				contactSOAPAction=SOAPAction;
+				contactSaveCount=0;
 				invokeSiebeWebservice(soapMsg,SOAPAction,'contactResponse');
 			}
 		else
@@ -123,6 +126,7 @@ debug("Inside searchContactResult method Response authErrorText",searchContactRe
 var searchContactResultObjText = searchContactResultObj.text;
 if(searchContactResultObj.rc=="200")
 {
+	contactSaveCount=3;
 deleteAllRow("contactAvailable");
 var table = document.getElementById("contactAvailable");
 var text=searchContactResultObjText;
@@ -273,7 +277,15 @@ else
 		}
 	else
 		{
+		if(contactData!=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
+		  {
+		  	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'contactResponse'), 30000);
+		  	contactSaveCount =contactSaveCount+1;
+		  }
+		  else
+		  {	
 		document.getElementById('Contact_div').innerHTML = 'Contact Query Failure : '+searchContactResultObj.text;
+		}
 		}
 	}
 document.getElementById('contactloading').innerHTML = '';
