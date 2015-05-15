@@ -284,17 +284,22 @@ else
 		  }
 		  else if(searchContactResultObj.text!=null||searchContactResultObj.text!="")
 		  {	
+		  	contactSaveCount=3;
 		document.getElementById('Contact_div').innerHTML = 'Contact Query Failure : '+searchContactResultObj.text;
 		}
 		else
 			{
+				contactSaveCount=3;
 			debug("Inside searchContactResult method Contact Query Failure with empty text");
 			document.getElementById('Contact_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
 		//}
 	}
+if(contactSaveCount==3)
+{
 document.getElementById('contactloading').innerHTML = '';
 document.getElementById('contactloading').style.display = 'none';
 document.getElementById('contactloading').style.visibility = 'invisible';
 debug("Inside searchContactResult method End","");
+}
 }
