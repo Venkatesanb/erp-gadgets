@@ -195,7 +195,7 @@ debug("Inside getEmployeeResult method Exception",e);
 }
 else
 {
-	if(employeeSaveCount!=5 && (obj.text==null||obj.text=="")) 
+	if(employeeSaveCount!=5 && (searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")) 
 	{
 		setTimeout(invokeSiebeWebservice(employeeData,employeeSOAPAction,'getemployeeResponse'), 9000);
 		employeeSaveCount=employeeSaveCount+1;
@@ -427,7 +427,7 @@ debug("Inside getContactResult method Exception",e);
 
 else
 {
-	if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
+	if(contactData!=5 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
   {
   	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse'), 9000);
   	contactSaveCount =contactSaveCount+1;
