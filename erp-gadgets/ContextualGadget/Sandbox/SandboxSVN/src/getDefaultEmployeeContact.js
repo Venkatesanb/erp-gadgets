@@ -39,8 +39,11 @@ try
 			soapMsg = soapMsg + '</soapenv:Envelope>';
 
 			debug("Inside getEmployee method Before send Employee Data to siebel .",soapMsg);
-
+		
 			var SOAPAction='rpc/http://siebel.com/CustomUI:QueryEmployee';
+			employeeData =soapMsg;
+			employeeSOAPAction =SOAPAction;
+			employeeSaveCount=0;
 			invokeSiebeWebservice(soapMsg,SOAPAction,'getemployeeResponse');
 	}
 }
@@ -63,6 +66,7 @@ debug("Inside getEmployeeResult method Employee Response authErrorText",searchEm
 var searchEmployeeResultObjText = searchEmployeeResultObj.text;
 if(searchEmployeeResultObj.rc=="200")
 {
+	employeeSaveCount=0;
 var table = document.getElementById("employeeSelected");
 var text=searchEmployeeResultObjText;
 if (window.DOMParser)
@@ -190,9 +194,18 @@ debug("Inside getEmployeeResult method Exception",e);
 }
 }
 else
+{
+	if(employeeSaveCount!=5 && (obj.text==null||obj.text=="")) 
+	{
+		setTimeout(invokeSiebeWebservice(employeeData,employeeSOAPAction,'getemployeeResponse'), 9000);
+		employeeSaveCount=employeeSaveCount+1;
+	}
+	else
 	{
 	document.getElementById('content_div').innerHTML = 'Employee Query Failed. Error contacting the server. Please contact your System administrator for support. ';
+	
 	}
+}
 }
 function getConact(){
 debug("Inside getConact method Begin", "");
@@ -247,6 +260,9 @@ try
 				
 				debug("Inside searchConact method  Before send soapData to siebel", soapMsg);
 				var SOAPAction='rpc/http://siebel.com/CustomUI:ANSQueryPageCustomUI';
+				contactData =soapMsg;
+				contactSOAPAction=SOAPAction;
+				
 				invokeSiebeWebservice(soapMsg,SOAPAction,'getcontactResponse');
 		}		
 	}
@@ -269,6 +285,7 @@ var searchContactResultObjText = searchContactResultObj.text;
 
 if(searchContactResultObj.rc=="200")
 {
+	contactSaveCount=5;
 var table = document.getElementById("contactSelected");
 var text=searchContactResultObjText;
 	
@@ -410,7 +427,15 @@ debug("Inside getContactResult method Exception",e);
 
 else
 {
-document.getElementById('content_div').innerHTML = 'Contact Query Failed. Error contacting the server. Please contact your System administrator for support. ';
+	if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
+  {
+  	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse'), 9000);
+  	contactSaveCount =contactSaveCount+1;
+  }
+  else
+  {
+	document.getElementById('content_div').innerHTML = 'Contact Query Failed. Error contacting the server. Please contact your System administrator for support. ';
+ }
 }
 
 debug("Inside getContactResult method End","");
