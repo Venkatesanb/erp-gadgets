@@ -26,9 +26,9 @@ var SOAPparams = {};
 ﻿  ﻿  SOAPparams[gadgets.io.RequestParameters.POST_DATA]=soapData;
 ﻿  ﻿  debug("Inside invokeSiebeWebservice method SOAP URL",soapURL);
 ﻿  ﻿  if(soapResponse=="contactResponse")
-﻿  ﻿  ﻿  gadgets.io.makeRequest(soapURL, searchContactResult, SOAPparams);
+﻿  ﻿  ﻿  makeCachedRequest(soapURL, searchContactResult, SOAPparams,10);
 ﻿  ﻿  if(soapResponse=="employeeResponse")
-﻿  ﻿  ﻿  gadgets.io.makeRequest(soapURL, searchEmployeeResult, SOAPparams);
+﻿  ﻿  ﻿  makeCachedRequest(soapURL, searchEmployeeResult, SOAPparams,10);
 ﻿  ﻿  if(soapResponse=="activityResponse")
 ﻿  ﻿  ﻿  makeCachedRequest(soapURL, createActivityResult, SOAPparams, 0);
 ﻿  ﻿  if(soapResponse=="employeeLogin")
