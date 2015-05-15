@@ -250,20 +250,22 @@ else
 	{
 	gadgets.window.adjustHeight(300);
 	debug("Inside searchEmployeeResult method Employee Query Failure");
+	debug("Inside searchEmployeeResult method Employee Query Failure employeeSaveCount:"+employeeSaveCount);
 	if((searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")&&employeeSaveCount!=3)
 		{
 	debug("Inside searchEmployeeResult method Employee Query Failure with empty text");
 	setTimeout(invokeSiebeWebservice(employeeData,employeeSOAPAction,'employeeResponse'), 30000);
 		employeeSaveCount=employeeSaveCount+1;
 		}
+	else if(searchEmployeeResultObj.text!=null||searchEmployeeResultObj.text!="")
+		{
+		document.getElementById('Employee_div').innerHTML = 'Employee Query Failure : '+searchEmployeeResultObj.text;
+		}
 	else
 	{
 	document.getElementById('Employee_div').innerHTML = 'Error contacting the server. Please contact your System administrator for support.';
 		}
-	else
-		{
-		document.getElementById('Employee_div').innerHTML = 'Employee Query Failure : '+searchEmployeeResultObj.text;
-		}
+	
 	}
 document.getElementById('Employeeloading').innerHTML = '';
 document.getElementById('Employeeloading').style.display = 'none';
