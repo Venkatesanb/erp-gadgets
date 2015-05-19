@@ -206,6 +206,10 @@ else
 	
 	}
 }
+if(employeeSaveCount==3)
+			{
+				getConact();
+			}
 }
 function getConact(){
 debug("Inside getConact method Begin", "");
