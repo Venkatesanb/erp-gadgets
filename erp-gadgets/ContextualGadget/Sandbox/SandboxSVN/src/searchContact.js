@@ -295,6 +295,7 @@ else
 		}
 		//}
 	}
+	debug("Inside searchContactResult contactSaveCount :",contactSaveCount);
 if(contactSaveCount==3)
 {
 document.getElementById('contactloading').innerHTML = '';
