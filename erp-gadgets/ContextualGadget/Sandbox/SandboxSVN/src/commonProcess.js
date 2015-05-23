@@ -493,7 +493,7 @@ prefs.set("LoginExpire",null);
 ﻿      ﻿  ﻿    ﻿  var params = {};
 ﻿      ﻿  ﻿      // params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  -- Commented By Venkatesan
                  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON  // Added By Venkatesan
-﻿      ﻿  ﻿    ﻿  params['AUTHORIZATION'] = 'SIGNED';
+﻿      ﻿  ﻿    ﻿  params['AUTHORIZATION'] = 'NONE';
 ﻿      ﻿  ﻿    ﻿  params['OAUTH_ADD_EMAIL'] = 'true';
 ﻿      ﻿  ﻿    ﻿  params['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
 ﻿      ﻿  ﻿    //﻿  gadgets.io.makeRequest(url,emailLoginResponse,params);  -- Commented By Venkatesan
