@@ -344,6 +344,7 @@ try
  //	activitySaveCount=5;
   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
   {
+    activitySOAPAction='rpc/http://siebel.com/CustomUI:ANSActivityThinCustomUIQueryPage_Input';
     setTimeout(invokeSiebeWebservice(querydata,activitySOAPAction,'activityResponse'), 9000);
      activitySaveCount =activitySaveCount+1;
   }
