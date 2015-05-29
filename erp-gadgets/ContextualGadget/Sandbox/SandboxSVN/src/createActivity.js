@@ -344,19 +344,6 @@ try
  //	activitySaveCount=5;
   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
   {
-  	alert("Before Check :"+activitySaveCount);
-	 if (activitySaveCount==0)
-	 {
-		activitySaveCount='';
-	 }
-	 	alert("After Check :"+activitySaveCount);
-	 var beforeChangeDescription = '<ans:ANSActivityDetails><![CDATA['+document.getElementById('details').value+activitySaveCount+']]></ans:ANSActivityDetails>';
-	 activitySaveCount = activitySaveCount+1;
-	 var AfterChangeDescription = '<ans:ANSActivityDetails><![CDATA['+document.getElementById('details').value+activitySaveCount+']]></ans:ANSActivityDetails>';
-	 alert("BeforChangeDetails :"+beforeChangeDescription);
-     alert("AfterChangeDetails :"+AfterChangeDescription);
-   activityData=activityData.replace(beforeChangeDescription,AfterChangeDescription)
-     alert("After change activityData :"+activityData);
     setTimeout(invokeSiebeWebservice(querydata,activitySOAPAction,'activityResponse'), 9000);
      
   }
