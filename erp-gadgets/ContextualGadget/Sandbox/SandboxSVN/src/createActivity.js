@@ -69,7 +69,8 @@ function createActivity()
   data = data + '<SiebelMessage>';
   data = data + '<ans:ListOfAnsaction3>';
   data = data + '<ans:Action operation="insert">';
-  data = data + '<ans:IntegrationID>'+transactionID+'</ans:IntegrationID>';
+//  data = data + '<ans:IntegrationID>'+transactionID+'</ans:IntegrationID>';
+	data = data + '<ans:Id>999999</ans:Id>';
   data = data + '<ans:Class>'+document.getElementById('classval').value+'</ans:Class>';
   data = data + '<ans:Type>'+document.getElementById('type').value+'</ans:Type>';
   data = data + '<ans:PrimaryOwnedBy>'+document.getElementById('owner').value+'</ans:PrimaryOwnedBy>';
