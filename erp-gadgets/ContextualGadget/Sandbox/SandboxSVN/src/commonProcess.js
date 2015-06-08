@@ -18,7 +18,7 @@ debug("Inside invokeSiebeWebservice method soapResponse",soapResponse);
 var SOAPparams = {};
 ﻿  ﻿  SOAPparams[gadgets.io.RequestParameters.AUTHORIZATION] = 'SIGNED';
 ﻿  ﻿  SOAPparams['OAUTH_ADD_EMAIL'] = 'true';
-﻿  ﻿  SOAPparams['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'true';
+﻿  ﻿  SOAPparams['OAUTH_ENABLE_PRIVATE_NETWORK'] = 'false';
 ﻿  ﻿  SOAPparams[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.POST;
     SOAPparams[gadgets.io.RequestParameters.REFRESH_INTERVAL] = 200;
 
