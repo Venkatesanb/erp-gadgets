@@ -348,7 +348,7 @@ try
     activitySaveCount =activitySaveCount+1;
     activitySOAPAction='rpc/http://siebel.com/CustomUI:ANSActivityThinCustomUIQueryPage';
       alert("activitySaveCount :"+activitySaveCount);
-    setTimeout(invokeSiebeWebservice(querydata,activitySOAPAction,'activityResponse'), 9000);
+    setTimeout(invokeSiebeWebservice(querydata,activitySOAPAction,'activityResponse'), 25000);
   
   }
   else
