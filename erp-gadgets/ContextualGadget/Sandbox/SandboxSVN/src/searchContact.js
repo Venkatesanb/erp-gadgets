@@ -279,7 +279,7 @@ else
 		{*/
 		if(contactSaveCount!=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
 		  {
-		  	setTimeout(invokeSiebeWebservice(contactData,contactSOAPAction,'contactResponse'), 30000);
+		  	setTimeout(function(){invokeSiebeWebservice(contactData,contactSOAPAction,'contactResponse')}, 15000);
 		  	contactSaveCount =contactSaveCount+1;
 		  }
 		  else if(searchContactResultObj.text!=null||searchContactResultObj.text!="")
