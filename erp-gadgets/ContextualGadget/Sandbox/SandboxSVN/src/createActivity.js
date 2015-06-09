@@ -259,7 +259,7 @@ var querydata;
   
   querydata = querydata + '<quer:ListOfANSActionThin pagesize="100" startrownum="0" recordcountneeded="true">';
   querydata = querydata + '<quer:ActionThin>';
-  querydata = querydata + '<quer:IntegrationID>='''+transactionID+'''</quer:IntegrationID>';
+  querydata = querydata + '<quer:IntegrationID>=\''+transactionID+'\'</quer:IntegrationID>';
   querydata = querydata + '<quer:Type/>';
   querydata = querydata + '<quer:Id/>';
   querydata = querydata + '<quer:ListOfAction_Contact pagesize="5" startrownum="0" recordcountneeded="false"/>';
