@@ -246,7 +246,7 @@ debug("Inside createActivityResult method Activity Response Text",obj.text);
 debug("Inside createActivityResult method Activity Response authErrorText",obj.oauthErrorText);
 var querydata;
   querydata = '<?xml version="1.0" encoding="utf-8"?>';
-  querydata = querydata + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://siebel.com/webservices" xmlns:asi="http://siebel.com/asi/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANSActionThin/Query"';
+  querydata = querydata + '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://siebel.com/webservices" xmlns:asi="http://siebel.com/asi/" xmlns:cus="http://siebel.com/CustomUI" xmlns:quer="http://www.siebel.com/xml/ANSActionThin/Query">';
   querydata = querydata + '<soapenv:Header>';
   querydata = querydata + '<web:PasswordText>innoveer09</web:PasswordText>';
   querydata = querydata + '<web:UsernameToken>SOAUSER</web:UsernameToken>';
