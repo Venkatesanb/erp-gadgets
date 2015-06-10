@@ -345,11 +345,11 @@ try
  //	activitySaveCount=5;
   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
   {
-    activitySaveCount =activitySaveCount+1;
+    
     activitySOAPAction='rpc/http://siebel.com/CustomUI:ANSActivityThinCustomUIQueryPage';
-      alert("activitySaveCount :"+activitySaveCount);
-    setTimeout(function(){invokeSiebeWebservice(querydata,activitySOAPAction,'activityResponse')}, 10000);
-  
+     
+    setTimeout(function(){activitySaveCount =activitySaveCount+1;invokeSiebeWebservice(querydata,activitySOAPAction,'activityResponse')}, 10000);
+   alert("activitySaveCount :"+activitySaveCount);
   }
   else
   {
