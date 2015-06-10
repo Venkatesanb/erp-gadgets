@@ -254,8 +254,8 @@ else
 	if((searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")&&employeeSaveCount!=3)
 		{
 	debug("Inside searchEmployeeResult method Employee Query Failure with empty text");
-	setTimeout(function(){invokeSiebeWebservice(employeeData,employeeSOAPAction,'employeeResponse')}, 15000);
-		employeeSaveCount=employeeSaveCount+1;
+	setTimeout(function(){employeeSaveCount=employeeSaveCount+1;invokeSiebeWebservice(employeeData,employeeSOAPAction,'employeeResponse')}, 15000);
+		
 		}
 	else if(searchEmployeeResultObj.text!=null||searchEmployeeResultObj.text!="")
 		{
