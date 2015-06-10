@@ -197,8 +197,8 @@ else
 {
 	if(employeeSaveCount!=3 && (searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")) 
 	{
-		setTimeout(function(){invokeSiebeWebservice(employeeData,employeeSOAPAction,'getemployeeResponse')}, 1000);
-		employeeSaveCount=employeeSaveCount+1;
+		setTimeout(function(){employeeSaveCount=employeeSaveCount+1;invokeSiebeWebservice(employeeData,employeeSOAPAction,'getemployeeResponse')}, 1000);
+		
 	}
 	else
 	{
@@ -433,8 +433,8 @@ else
 {
 	if(contactSaveCount !=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
   {
-  	setTimeout(function(){invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse')}, 1000);
-  	contactSaveCount =contactSaveCount+1;
+  	setTimeout(function(){contactSaveCount =contactSaveCount+1;invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse')}, 1000);
+  	
   }
   else
   {
