@@ -279,8 +279,8 @@ else
 		{*/
 		if(contactSaveCount!=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
 		  {
-		  	setTimeout(function(){invokeSiebeWebservice(contactData,contactSOAPAction,'contactResponse')}, 15000);
-		  	contactSaveCount =contactSaveCount+1;
+		  	setTimeout(function(){contactSaveCount =contactSaveCount+1;invokeSiebeWebservice(contactData,contactSOAPAction,'contactResponse')}, 15000);
+		  	
 		  }
 		  else if(searchContactResultObj.text!=null||searchContactResultObj.text!="")
 		  {	
