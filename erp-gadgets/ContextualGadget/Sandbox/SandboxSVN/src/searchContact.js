@@ -270,6 +270,7 @@ else
 	{
 	gadgets.window.adjustHeight(300);
 	debug("Inside searchContactResult method Contact Query Failure");
+	contactSaveCount=3;
 	/*if(searchContactResultObj.text==null||searchContactResultObj.text=="")
 		{
 	debug("Inside searchContactResult method Contact Query Failure with empty text");
