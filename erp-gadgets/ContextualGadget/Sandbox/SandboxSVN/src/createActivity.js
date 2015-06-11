@@ -342,7 +342,7 @@ try
  }
  else
  {
- //	activitySaveCount=5;
+ 	activitySaveCount=5;
   if(activitySaveCount!=5 && (obj.text==null||obj.text==""))
   {
     
@@ -395,9 +395,9 @@ try
 catch (e)
 {
 debug("Inside createActivityResult method Exception",e);
-alert("Exception activitySaveCount :"+activitySaveCount);
+//alert("Exception activitySaveCount :"+activitySaveCount);
 }
-alert("activitySaveCount :"+activitySaveCount);
+//alert("activitySaveCount :"+activitySaveCount);
 if(activitySaveCount==5)
 {
 document.getElementById('activityLoading').innerHTML = '';
