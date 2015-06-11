@@ -249,6 +249,7 @@ debug("Inside searchEmployeeResult method Exception",e);
 else
 	{
 	gadgets.window.adjustHeight(300);
+	employeeSaveCount=3;
 	debug("Inside searchEmployeeResult method Employee Query Failure");
 	debug("Inside searchEmployeeResult method Employee Query Failure employeeSaveCount:"+employeeSaveCount);
 	if((searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")&&employeeSaveCount!=3)
