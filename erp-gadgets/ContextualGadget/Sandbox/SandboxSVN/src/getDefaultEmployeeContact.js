@@ -195,6 +195,7 @@ debug("Inside getEmployeeResult method Exception",e);
 }
 else
 {
+	employeeSaveCount=3;
 	if(employeeSaveCount!=3 && (searchEmployeeResultObj.text==null||searchEmployeeResultObj.text=="")) 
 	{
 		setTimeout(function(){employeeSaveCount=employeeSaveCount+1;invokeSiebeWebservice(employeeData,employeeSOAPAction,'getemployeeResponse')}, 1000);
@@ -431,6 +432,7 @@ debug("Inside getContactResult method Exception",e);
 
 else
 {
+	contactSaveCount=3;
 	if(contactSaveCount !=3 && (searchContactResultObj.text==null||searchContactResultObj.text==""))
   {
   	setTimeout(function(){contactSaveCount =contactSaveCount+1;invokeSiebeWebservice(contactData,contactSOAPAction,'getcontactResponse')}, 1000);
